@@ -1,3 +1,12 @@
+terraform {
+    backend "remote" {
+      hostname = "app.terraform.io"
+      organization = "mea-cisg"
+      workspaces {
+        name = "cx-demo"
+      }
+  }
+}
 
 provider "intersight" {
   apikey    = var.api_key
