@@ -1,7 +1,7 @@
 cluster_definition = {
     cx-demoer1 = {
         worker_size = "small"
-        worker_count = 2
+        worker_count = 4
         master_count = 1
         load_balancers = 1
         cluster_action = "Unassign"
