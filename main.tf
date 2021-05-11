@@ -35,6 +35,8 @@ module "terraform-intersight-iks" {
   ip_gateway          = each.value.ip_gateway
   ip_primary_dns      = var.ip_primary_dns
   ip_secondary_dns    = var.ip_secondary_dns
+  ip_primary_ntp      = var.ip_primary_ntp
+  ip_secondary_ntp    = var.ip_secondary_ntp
 
   # Network Configuration Settings
   # pod_cidr = "100.65.0.0/16"

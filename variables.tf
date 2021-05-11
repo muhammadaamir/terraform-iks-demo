@@ -71,6 +71,17 @@ variable "timezone" {
   description = "Timezone Name"
 }
 
+variable "ip_primary_ntp" {
+  type = string
+  description = "Primary NTP Server"
+}
+
+variable "ip_secondary_ntp" {
+  type = string
+  description = "Seconday NTP Server"
+  default = ""
+}
+
 variable "ssh_user" {
   type = string
   description = "IKS User"
