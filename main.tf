@@ -61,7 +61,7 @@ module "terraform-intersight-iks" {
 }
 
 module "iks_addon_dashboard" {
-  source            = "terraform-cisco-modules/iks/intersight/modules/addon_policy"
+  source            = "terraform-cisco-modules/iks/intersight//modules/addon_policy"
 
   for_each = var.cluster_definition
   addon_policy_name = format("%s-dashboard", each.key)
@@ -73,7 +73,7 @@ module "iks_addon_dashboard" {
 }
 
 module "iks_addon_monitor" {
-  source            = "terraform-cisco-modules/iks/intersight/modules/addon_policy"
+  source            = "terraform-cisco-modules/iks/intersight//modules/addon_policy"
 
   for_each = var.cluster_definition
   addon_policy_name = format("%s-monitor", each.key)
