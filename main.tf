@@ -59,3 +59,27 @@ module "terraform-intersight-iks" {
   organization = var.organization
   tags         = var.tags
 }
+
+module "iks_addon_dashboard" {
+  source            = "terraform-cisco-modules/iks/intersight/modules/addon_policy"
+
+  for_each = var.cluster_definition
+  addon_policy_name = format("%s-dashboard", each.key)
+  addons            = "kubernetes-dashboard"
+  upgrade_strategy  = "AlwaysReinstall"
+  install_strategy  = "InstallOnly"
+  org_name          = var.organization
+  tags              = var.tags
+}
+
+module "iks_addon_monitor" {
+  source            = "terraform-cisco-modules/iks/intersight/modules/addon_policy"
+
+  for_each = var.cluster_definition
+  addon_policy_name = format("%s-monitor", each.key)
+  addons            = "ccp-monitor"
+  upgrade_strategy  = "AlwaysReinstall"
+  install_strategy  = "InstallOnly"
+  org_name          = var.organization
+  tags              = var.tags
+}
